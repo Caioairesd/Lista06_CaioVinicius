@@ -17,4 +17,8 @@ posicao = int(input("Insira um número de 0 a 9: "))
 scanner = produtos.__getitem__(posicao)
 
 
-print("O {} está na lista na posição {}".format(scanner,i))
+print("{} está na lista na posição {}".format(scanner,i))
+
+print("----------------------------------------------------")
+print("Caio Vinicius Aires da Silva")
+print("Fim do programa.")

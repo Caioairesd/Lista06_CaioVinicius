@@ -7,7 +7,7 @@ paises = ('Brasil','Angola','japão','Alemanha','Georgia')
 print(paises)
 
 try:
-    pais = str(input("Insira um dois países:")).title()
+    pais = str(input("Insira um dois países: ")).title()
     if pais in paises:
         i = paises.index(pais)
         print("A posição na lista é: {} ".format(i))
