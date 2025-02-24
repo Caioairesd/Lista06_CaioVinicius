@@ -11,34 +11,36 @@ for i in range(3):
     convidados = input("Adicione um convidado: ").title()
     Lista.append(convidados)
 
-confirm = input("Você deseja adiconar mais um convidado?\n(S/s para sim ou N/n para não): ").lower()
+confirmacao = input("Você deseja adiconar mais um convidado?\n(S/s para sim ou N/n para não): ").lower()
 
-while confirm != "n":
-    convidados = input("Adicione um convidado: ")
+while confirmacao == "s":
+    convidados = input("Adicione um convidado: ").title()
     Lista.append(convidados)
-    confirm = input("Você deseja adiconar mais um convidado?\n(S/s para sim ou N/n para não): ").lower()
+    confirmacao = input("Você deseja adiconar mais um convidado?\n(S/s para sim ou N/n para não): ").lower()
     
 
 qtde = Lista.__len__()
 print("Você convidou {} pessoas".format(qtde))
 
 print(Lista)
-
-convidados = input("Insira um dos convidados presentes na lista: ").title()
-if convidados in Lista:
-    i = Lista.index(convidados)
-    print("A posição do convidado na lista é: {} ".format(i))
-else:    
+try:
+    convidados = input("Insira um dos convidados presentes na lista: ").title()
+    if convidados in Lista:
+        i = Lista.index(convidados)
+        print("A posição do convidado na lista é: {} ".format(i))
+except:    
     print("{} não está presente na lista!".format(convidados))
 
-confirm = input("Você ainda deseja que essa pessoa venha a festa?\n(S/s para sim ou N/n para não): ").lower
-if confirm == "s":
-    print("{} continua na lista de convidados!".format(convidados))
-else:
+confirmacao2 = input("Você ainda deseja que essa pessoa venha a festa?\n(S/s para sim ou N/n para não): ").lower()
+if confirmacao2 != "s":
     i = Lista.index(convidados)
     Lista.remove(convidados)
+    print("{} foi removido da lista de convidados!".format(convidados))
     print(Lista)
 
+else:
+    print("{} continua na lista de convidados!".format(convidados))
+    print(Lista)
 
 
 print("----------------------------------------------------")
